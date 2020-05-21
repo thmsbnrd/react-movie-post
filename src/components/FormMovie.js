@@ -21,6 +21,16 @@ class FormMovie extends Component {
 
   submitForm(e) {
     e.preventDefault();
+    const url = 'https://post-a-form.herokuapp.com/api/movies/'
+    axios.post(url, this.state)
+      .then(res => res.data)
+      .then(res => {
+        alert(`Film ajouté avec l'ID ${res.id} !`);
+      })
+      .catch(e => {
+        console.error(e);
+        alert(`Erreur lors de l'ajout d'un film : ${e.message}`);
+      });
   }
 
   render() {
