@@ -13,6 +13,12 @@ class FormMovie extends Component {
     this.submitForm = this.submitForm.bind(this);
   }
 
+  onChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
+
   render() {
     return (
       <div className="FormMovie">
