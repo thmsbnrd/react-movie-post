@@ -19,11 +19,57 @@ class FormMovie extends Component {
     });
   }
 
+  submitForm(e) {
+    e.preventDefault();
+  }
+
   render() {
     return (
-      <div className="FormMovie">
-        
-      </div>
+        <div className="FormMovie">
+            <h1>Partage ton film préféré</h1>
+            
+            <form onSubmit={this.submitForm}>
+            <fieldset>
+                <legend>Informations</legend>
+                <div className="form-data">
+                <label htmlFor="title">Titre</label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    onChange={this.onChange}
+                    value={this.state.title}
+                />
+                </div>
+            
+                <div className="form-data">
+                <label htmlFor="poster">URL du poster</label>
+                <input
+                    type="text"
+                    id="poster"
+                    name="poster"
+                    onChange={this.onChange}
+                    value={this.state.poster}
+                />
+                </div>
+            
+                <div className="form-data">
+                <label htmlFor="comment">Commentaire</label>
+                <input
+                    type="textarea"
+                    id="comment"
+                    name="comment"
+                    onChange={this.onChange}
+                    value={this.state.comment}
+                />
+                </div>
+                <hr />
+                <div className="form-data">
+                <input type="submit" value="Envoyer" />
+                </div>
+            </fieldset>
+            </form>
+        </div>
     );
   }
 }
