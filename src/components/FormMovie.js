@@ -55,8 +55,8 @@ class FormMovie extends Component {
             
                 <div className="form-data">
                 <label htmlFor="comment">Commentaire</label>
-                <input
-                    type="textarea"
+                <textarea
+                    type="text"
                     id="comment"
                     name="comment"
                     onChange={this.onChange}
